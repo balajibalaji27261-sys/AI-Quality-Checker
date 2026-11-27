@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prompt Quality Checker</title>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            PromptCheck AI
+        </div>
+        <span class="header-tag">Student Edition</span>
+    </header>
+
+    <main class="container">
+
+        <!-- Page heading -->
+        <section class="hero">
+            <span class="hero-label">SMART PROMPT ANALYZER</span>
+            <h1>AI Prompt Quality Checker</h1>
+            <p>
+                Evaluate your AI prompts, discover missing elements,
+                and improve your prompt engineering skills.
+            </p>
+        </section>
+
+        <!-- Main two-column section -->
+        <section class="main-grid">
+
+            <!-- LEFT: Prompt input -->
+            <div class="card input-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h2>Enter Your Prompt</h2>
+                        <p>Write or paste your AI prompt below.</p>
+                    </div>
+                    <span class="heading-icon">✎</span>
+                </div>
+
+                <label for="promptInput">Your AI Prompt</label>
+
+                <textarea
+                    id="promptInput"
+                    placeholder="Example: Act as an experienced teacher. Explain artificial intelligence to college students using simple language. Include real-world examples. Keep the explanation under 300 words and present it in bullet points..."
+                ></textarea>
+
+                <div class="word-info">
+                    <span id="wordCount">0 words</span>
+                    <span>Be clear and specific!</span>
+                </div>
+
+                <div id="errorMessage" class="error-message" role="alert">
+                    Please enter a prompt before checking.
+                </div>
+
+                <div class="button-group">
+                    <button id="checkBtn" class="btn btn-primary">
+                        ✦ Check Prompt
+                    </button>
+
+                    <button id="sampleBtn" class="btn btn-secondary">
+                        ↗ Load Sample
+                    </button>
+
+                    <button id="clearBtn" class="btn btn-clear">
+                        ↺ Clear
+                    </button>
+                </div>
+
+                <div class="tip-box">
+                    <span>💡</span>
+                    <p>
+                        <strong>Pro Tip:</strong> A good prompt should
+                        define a role, task, context, constraints,
+                        and output format.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: Analysis results -->
+            <div class="card results-card">
+
+                <div class="card-heading">
+                    <div>
+                        <h2>Analysis Results</h2>
+                        <p>See how well your prompt performs.</p>
+                    </div>
+                    <span class="heading-icon">◎</span>
+                </div>
+
+                <!-- Score section -->
+                <div class="score-section">
+
+                    <div class="score-circle">
+                        <div>
+                            <span id="score">0</span>
+                            <small>/ 100</small>
+                        </div>
+                    </div>
+
+                    <h3 id="rating">Not Evaluated</h3>
+                    <p id="ratingDescription">
+                        Your prompt score will appear here.
+                    </p>
+
+                </div>
+
+                <!-- Progress bar -->
+                <div class="progress-section">
+                    <div class="progress-heading">
+                        <span>Prompt Quality</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+
+                    <div class="progress-track">
+                        <div id="progressBar" class="progress-bar"></div>
+                    </div>
+                </div>
+
+                <!-- Component checklist -->
+                <div class="component-section">
+                    <h3>Component Analysis</h3>
+
+                    <div id="componentResults">
+
+                        <div class="component-item">
+                            <span>👤 Role</span>
+                            <span class="status neutral">Not checked</span>
+                        </div>
+
+                        <div class="component-item">
+                            <span>🎯 Task</span>
+                            <span class="status neutral">Not checked</span>
+                        </div>
+
+                        <div class="component-item">
+                            <span>📚 Context</span>
+                            <span class="status neutral">Not checked</span>
+                        </div>
+
+                        <div class="component-item">
+                            <span>⚙️ Constraints</span>
+                            <span class="status neutral">Not checked</span>
+                        </div>
+
+                        <div class="component-item">
+                            <span>📄 Output Format</span>
+                            <span class="status neutral">Not checked</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Suggestions -->
+                <div class="suggestion-section">
+                    <h3>💡 Improvement Suggestions</h3>
+
+                    <ul id="suggestions">
+                        <li>Enter a prompt to receive suggestions.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Made with ♥ for students | AI Prompt Quality Checker</p>
+            <p>Learn • Practice • Improve</p>
+        </footer>
+
+    </main>
+
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
